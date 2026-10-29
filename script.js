@@ -21,7 +21,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const termo = (busca?.value || "").trim().toLocaleLowerCase("pt-BR");
     const tema = categoria?.value || "todos";
     let visiveis = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+  const busca = document.querySelector("#log-search");
+  const filtroAno = document.querySelector("#log-year");
+  const registros = [...document.querySelectorAll(".log-entry")];
+  const vazio = document.querySelector("#log-empty");
 
+  function filtrarRegistros() {
+    const termo = (busca?.value || "").trim().toLocaleLowerCase("pt-BR");
+    const anoSelecionado = filtroAno?.value || "todos";
+    let encontrados = 0;
+
+    registros.forEach(registro => {
+      const texto = registro.innerText.toLocaleLowerCase("pt-BR");
+      const anoRegistro = registro.querySelector(".date-year")?.textContent.trim();
+
+      const correspondeTexto = texto.includes(termo);
+      const correspondeAno =
+        anoSelecionado === "todos" || anoRegistro === anoSelecionado;
+
+      const mostrar = correspondeTexto && correspondeAno;
+      registro.hidden = !mostrar;
+
+      if (mostrar) encontrados++;
+    });
+
+    if (vazio) vazio.hidden = encontrados > 0;
+  }
+
+  busca?.addEventListener("input", filtrarRegistros);
+  filtroAno?.addEventListener("change", filtrarRegistros);
+
+  filtrarRegistros();
+});
     cards.forEach(card => {
       const texto = (card.innerText + " " + (card.dataset.search || "")).toLocaleLowerCase("pt-BR");
       const combinaTexto = texto.includes(termo);
