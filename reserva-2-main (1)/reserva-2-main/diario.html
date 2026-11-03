@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registros das atividades do projeto Paraná Faz Ciência.">
+  <title>Diário de atividades | Paraná Faz Ciência</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">🌱</span><span>Paraná Faz Ciência</span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="diario-bordo.html">Diário de Bordo</a>
+      <a class="active" href="diario.html">Atividades</a>
+      <a href="galeria.html">Galeria</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-intro">
+      <span class="eyebrow">NOSSA CAMINHADA</span>
+      <h1>Diário de atividades</h1>
+      <p>Um registro das etapas, experiências e aprendizados construídos durante o projeto.</p>
+    </section>
+
+    <section class="diary-tools" aria-label="Ferramentas de pesquisa">
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-posts" type="search" placeholder="Buscar uma atividade..." aria-label="Buscar uma atividade"></label>
+      <label class="filter-box"><span>Filtrar por tema</span>
+        <select id="filter-category" aria-label="Filtrar por tema">
+          <option value="todos">Todos os temas</option>
+          <option value="planejamento">Planejamento</option>
+          <option value="horta">Horta</option>
+          <option value="tecnologia">Tecnologia</option>
+          <option value="compostagem">Compostagem</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="diary-layout">
+      <section class="timeline" id="activity-list" aria-label="Registros de atividades">
+        <article class="activity-card" data-category="horta" data-search="preparação da horta organização espaço cultivo mudas">
+          <div class="activity-date"><span>ETAPA 01</span><strong>Início do projeto</strong></div>
+          <div class="activity-content">
+            <span class="tag tag-green">Horta</span>
+            <h2>Preparação da horta</h2>
+            <p class="activity-meta">Registro de exemplo • Etapa inicial</p>
+            <p>Começamos a organizar o espaço destinado à horta, observando as condições do ambiente e planejando como as plantas seriam cultivadas.</p>
+            <div class="activity-bottom"><span class="read-time">Planejamento e organização</span><span class="activity-symbol">01</span></div>
+          </div>
+        </article>
+
+        <article class="activity-card" data-category="compostagem" data-search="compostagem resíduos orgânicos adubo reaproveitamento">
+          <div class="activity-date"><span>ETAPA 02</span><strong>Resíduos orgânicos</strong></div>
+          <div class="activity-content">
+            <span class="tag tag-earth">Compostagem</span>
+            <h2>Conhecendo a compostagem</h2>
+            <p class="activity-meta">Registro de exemplo • Pesquisa</p>
+            <p>Estudamos como restos orgânicos podem ser reaproveitados na compostagem e como esse processo pode contribuir para a qualidade do solo.</p>
+            <div class="activity-bottom"><span class="read-time">Pesquisa e sustentabilidade</span><span class="activity-symbol">02</span></div>
+          </div>
+        </article>
+
+        <article class="activity-card" data-category="tecnologia" data-search="sensores automação umidade temperatura tecnologia monitoramento">
+          <div class="activity-date"><span>ETAPA 03</span><strong>Experimentação</strong></div>
+          <div class="activity-content">
+            <span class="tag tag-blue">Tecnologia</span>
+            <h2>Planejamento da automação</h2>
+            <p class="activity-meta">Registro de exemplo • Desenvolvimento</p>
+            <p>Conhecemos a função dos sensores e planejamos como acompanhar informações importantes para o cultivo, como umidade e temperatura.</p>
+            <div class="activity-bottom"><span class="read-time">Sensores e monitoramento</span><span class="activity-symbol">03</span></div>
+          </div>
+        </article>
+
+        <article class="activity-card" data-category="planejamento" data-search="organização equipe objetivos pesquisa planejamento">
+          <div class="activity-date"><span>ETAPA 04</span><strong>Organização</strong></div>
+          <div class="activity-content">
+            <span class="tag tag-purple">Planejamento</span>
+            <h2>Definição das próximas etapas</h2>
+            <p class="activity-meta">Registro de exemplo • Organização da equipe</p>
+            <p>Organizamos as tarefas e os próximos passos, definindo o que precisa ser desenvolvido, testado e documentado ao longo do projeto.</p>
+            <div class="activity-bottom"><span class="read-time">Trabalho em equipe</span><span class="activity-symbol">04</span></div>
+          </div>
+        </article>
+      </section>
+      <aside class="diary-aside">
+        <div class="aside-icon">✳</div>
+        <h3>Um projeto em construção</h3>
+        <p>Este diário reúne exemplos de como os registros podem ser apresentados. Substitua os textos pelas atividades que a equipe realmente realizou.</p>
+        <a href="galeria.html" class="text-link">Ver galeria de fotos →</a>
+      </aside>
+    </div>
+    <p class="empty-state" id="empty-state" hidden>Nenhuma atividade encontrada. Tente outra busca ou categoria.</p>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html">🌱 Paraná Faz Ciência</a>
+    <p>Ciência hoje, um futuro melhor amanhã.</p>
+    <span>Projeto de educação ambiental e tecnologia</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
